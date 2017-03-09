@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>营销平台</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="${appPrefix}/css/css.css" />
+	<!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<div class="wraper">
+		<!-- 侧边栏 -->
+		<div class="sidebar">
+			<nav class="navbar navbar-default navbar-color" role="navigation">
+			    <div class="container-fluid padding0">
+			    <div class="navbar-header">
+			        <button type="button" class="navbar-toggle" data-toggle="collapse"
+			                data-target="#example-navbar-collapse">
+			            <span class="sr-only">切换导航</span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			        </button>
+			        <a class="navbar-brand logo" href="#"><img src="${appPrefix}/images/u629.png" alt=""></a>
+			    </div>
+			    <div class="collapse navbar-collapse padding0" id="example-navbar-collapse">
+			        <ul class="nav navbar-nav navbar-item">
+			            <li class="active">
+			            	<a href="#"><img src="${appPrefix}/images/u400.png" alt="">iOS</a>
+			            </li>
+			            <li><a href="#"><img src="${appPrefix}/images/u400.png" alt="">SVN</a></li>
+			            <li class="dropdown">
+			                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+			                    <img src="${appPrefix}/images/u400.png" alt="">Java <b class="caret"></b>
+			                </a>
+			                <ul class="dropdown-menu second-menu">
+			                    <li><a href="#">jmeter</a></li>
+			                    <li><a href="#">EJB</a></li>
+			                    <li><a href="#">Jasper Report</a></li>
+			                    <li class="divider"></li>
+			                    <li><a href="#">分离的链接</a></li>
+			                    <li class="divider"></li>
+			                    <li><a href="#">另一个分离的链接</a></li>
+			                </ul>
+			            </li>
+			        </ul>
+			    </div>
+			    </div>
+			</nav>
+		</div>
+		<!-- 内容区 -->
+		<div class="content">
+			<div class="content-head">
+				<div class="row margin0">
+					<div class="col-sm-3 hidden-xs hidden-sm"><a href="#">优惠券管理/</a>优惠券编辑</div>
+					<div class="col-sm-8">
+						<div class="user">
+							<div class="head-img"></div>
+							<span>L.Lester</span>
+						</div>
+						<div class="help hidden-xs hidden-sm">
+							<img src="${appPrefix}/images/u451.png" alt="">
+							<span>帮助</span>
+						</div>
+					</div>	
+					<div class="col-sm-1"></div>
+				</div>
+			</div>
+			<div class="content-body">
+				<div class="content-details-wrap coupon-manage">
+					<form action="">
+						<div class="edit-content">
+							<div class="row margin0">
+								<span>*优惠类型：</span>
+								<input type="radio" name="type"> 微信平台
+								<input type="radio" name="type"> 外部活动
+							</div>
+							<div class="row margin0">
+								<span>*优惠商家：</span>
+								<input type="text" placeholder="选择商家名称" class="mr10 select>
+								<a href="#">刷新</a>
+								<a href="#">新建商家</a>
+							</div>
+							<div class="row margin0">
+								<span>*长标题：</span>
+								<textarea name="" class="long-title" cols="30" rows="3" placeholder="请输入宣传语最长支持100个字符"></textarea>
+							</div>
+							<div class="row margin0 create-way">
+								<span>*生成方式：</span>
+								<input type="radio" name="createway"> 自动生成
+								<input type="radio" name="createway"> 导入码库
+							</div>
+							<div class="row margin0">
+								<span>*有效期：</span>
+								<input type="radio" name="validity"> 长期有效
+								<input type="radio" name="validity"> 自定义有效期
+								<input type="text">
+							</div>
+							<div class="row margin0">
+								<span>*回收时间：</span>
+								<input type="radio" name="recycletime"> 长期有效
+								<input type="radio" name="recycletime"> 24小时
+								<input type="radio" name="recycletime"> 自定义时间：
+								<input type="text" placeholder="请输入时间"> 小时
+							</div>
+							<div class="row margin0">
+								<span>*发行量：</span>
+								<input type="text" placeholder="输入发行量">
+							</div>
+							<div class="row margin0">
+								<span>*面值：</span>
+								<input type="text" placeholder="输入面值">
+							</div>
+							<div class="row margin0">
+								<span>进货价：</span>
+								<input type="text" placeholder="输入实际价格">
+							</div>
+							<div class="row margin0">
+								<span>*出售价格：</span>
+								<input type="text" placeholder="输入出售价格">
+							</div>
+							<div class="row margin0">
+								<span>*活动银行：</span>
+								<input type="text" class="mr10"  placeholder="请选择">
+								<a href="#">刷新</a>
+								<a href="#">新建活动银行</a>
+							</div>
+							<div class="row margin0">
+								<span>每人限购：</span>
+								<input type="text" placeholder="1">
+							</div>
+							<div class="row margin0 upload">
+								<span>*优惠券首图：</span>
+								<img src="" alt="">
+							</div>
+							<div class="row margin0">
+								<span>*优惠规则：</span>
+								<textarea name="" id="" cols="30" rows="2" placeholder="请输入优惠详情"></textarea>
+							</div>
+						</div>
+						<div class="upload-operate">
+							<button class="btn btn-primary">提交</button>
+							<button class="btn btn-defalt">返回</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="${appPrefix}/js/js.js"></script>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>营销平台</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="${appPrefix}/css/css.css" />
+
+
+	<!--[if lt IE 9]>
+	<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<style>
+	.pagination ul > li {
+		display: inline;
+	}
+	.pagination ul > li > a, .pagination ul > li > span {
+		float: left;
+		padding: 4px 12px;
+		line-height: 20px;
+		text-decoration: none;
+		background-color: #ffffff;
+		border: 1px solid #dddddd;
+		border-left-width: 0;
+	}
+</style>
+
+
+	<![endif]-->
+</head>
+<body>
+<!--<div class="wraper">-->
+<!-- 侧边栏 -->
+<!--<div class="sidebar">
+    <nav class="navbar navbar-default navbar-color" role="navigation">
+        <div class="container-fluid padding0">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#example-navbar-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand logo" href="#"><img src="${appPrefix}/images/u629.png" alt=""></a>
+        </div>
+        <div class="collapse navbar-collapse padding0" id="example-navbar-collapse">
+            <ul class="nav navbar-nav navbar-item">
+                <li class="active">
+                    <a href="#"><img src="${appPrefix}/images/u400.png" alt="">iOS</a>
+                </li>
+                <li><a href="#"><img src="${appPrefix}/images/u400.png" alt="">SVN</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="${appPrefix}/images/u400.png" alt="">Java <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu second-menu">
+                        <li><a href="#">jmeter</a></li>
+                        <li><a href="#">EJB</a></li>
+                        <li><a href="#">Jasper Report</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">分离的链接</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">另一个分离的链接</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+</div>-->
+<!-- 内容区 -->
+<!--<div class="content">-->
+<!--<div class="content-head">
+    <div class="row margin0">
+        <div class="col-sm-2 hidden-xs hidden-sm">团购订单</div>
+        <div class="col-sm-9">
+            <div class="user">
+                <div class="head-img"></div>
+                <span>L.Lester</span>
+            </div>
+            <div class="help hidden-xs hidden-sm">
+                <img src="${appPrefix}/images/u451.png" alt="">
+                <span>帮助</span>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>-->
+<div class="content-body">
+	<div class="content-details-wrap">
+		<div class="content-details">
+			<div class="details-form">
+				<div class="row">
+					<div class="col-lg-4 col-md-6 col-xs-12 mb15">
+						<div class="order-item">设备编号</div>
+						<input type="text" placeholder="请输入" id="devNo" value="${devNo}">
+					</div>
+				</div>
+				<div class="btns">
+					<a class="btn btn-primary" id="serach-btn">搜索</a>
+					<button class="btn btn-default">清除</button>
+					<button class="btn btn-default">批量导出</button>
+					<a class="btn btn-success" href="${appPrefix}/intellDev/add">新增</a>
+				</div>
+			</div>
+			<p class="result-num">共搜索到<span class="specific-num"> ${size} </span>条数据</p>
+			<div class="details-list">
+				<div class="list-title">
+					<div class="row margin0">
+						<!--<div class="col-md-1">
+                            <input type="checkbox">
+                        </div>-->
+						<div class="col-md-1">设备编号</div>
+						<div class="col-md-2">创建者编号</div>
+						<div class="col-md-1">所属账户编号</div>
+						<div class="col-md-1">创建时间</div>
+						<div class="col-md-1">更新时间</div>
+						<div class="col-md-1">备注</div>
+						<div class="col-md-3">操作</div>
+					</div>
+				</div>
+				@for(intellDevDomain in intellDevDomains){
+
+				<div class="list-item">
+					<!--<div class="item-number row margin0">
+                        &lt;!&ndash;<div class="col-md-1 cbx">
+                            <input type="checkbox">
+                        </div>&ndash;&gt;
+                        <div class="list-order-num col-md-3">
+                            设备编号：
+                            <span>${intellDevDomain.devNo}</span>
+                        </div>
+                        <div class="list-favorable-num col-md-3">
+                            创建时间：
+                            &lt;!&ndash;<span>${intellDevDomain.gmtCreate}</span>&ndash;&gt;
+                            ${intellDevDomain.gmtCreate,"yyyy-MM-dd HH:mm:ss"}
+
+                        </div>
+                    </div>-->
+					<div class="item-msg row margin0">
+						<div class="col-md-1 product">
+							<!--<img src="" alt="">-->
+							${intellDevDomain.devNo}
+						</div>
+						<div class="col-md-2 mid">
+							${intellDevDomain.creator}
+						</div>
+						<div class="col-md-1 mid">
+							${intellDevDomain.belongNo}
+						</div>
+						<div class="col-md-1 mid">
+							${intellDevDomain.gmtCreate,"yyyy-MM-dd HH:mm:ss"}
+						</div>
+						<div class="col-md-1 mid">
+							${intellDevDomain.gmtModified,"yyyy-MM-dd HH:mm:ss"}
+						</div>
+
+						<div class="col-md-3 mid">
+							<a class="col-md-4" href="${appPrefix}/intellDev/update?id=${intellDevDomain.id}">
+								<img height="20px" src="${appPrefix}/images/icon/edit.ico" alt="修改" title="修改">
+							</a>
+							<a class="col-md-4"   name="ids" datas="${intellDevDomain.id}">
+								<img height="20px" src="${appPrefix}/images/icon/delete.ico" alt="删除" title="删除">
+							</a>
+							<a class="col-md-4" href="${appPrefix}/intellDev/select?id=${intellDevDomain.id}">
+								<img height="20px" src="${appPrefix}/images/icon/check.ico" alt="查看" title="查看">
+							</a>
+						</div>
+					</div>
+				</div>
+				@}
+
+			</div>
+
+			<div id="paginators"></div>
+
+		</div>
+	</div>
+</div>
+</div>
+<!--</div>-->
+<!--</div>-->
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<!--<link href="css/bootstrap.css" rel="stylesheet">-->
+<script type="text/javascript" src="${appPrefix}/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="${appPrefix}/js/bootstrap-paginator.min.js"></script>
+
+<script src="${appPrefix}/js/js.js"></script>
+<script>
+
+	$(function(){
+		var container = $('#paginators');
+
+		var options = {
+			containerClass:"pagination"
+			, currentPage:"${intellDevDomains.number+1}"
+			, totalPages:"${intellDevDomains.totalPages}"
+			, pageUrl:function(type,page){
+				var devNo=$("#devNo").val();
+				 if(isNull(devNo)) {
+					return "${appPrefix}/intellDev/index/"+page+".html";
+			 } else {
+					return "${appPrefix}/intellDev/index/"+page+".html?devNo="+devNo;
+			 }
+			}
+
+		};
+		container.bootstrapPaginator(options);
+		$("[name='ids']").on('click',function(){
+			var r=confirm("您确定要删除吗？");
+			if (r==true) {
+				$.ajax({
+					url: "${appPrefix}/devApi/delete",
+					type: "post",
+					data:{id:$(this).attr("datas")},
+					success: function (data) {
+						//alert(data);
+						if(data == "true") {
+							alert("删除成功！");
+							location.reload();
+						} else {
+							alert("删除失败！");
+						}
+					}
+
+				})
+			} else {
+				return false;
+			}
+
+
+		})
+		function isNull(data){
+			return (data == "" || data == undefined || data == null);
+		}
+
+		/*function del(id) {
+			alert("d");
+			var r=confirm("您确定要删除吗？")
+			if (r==true) {
+				$.ajax({
+					url: "${appPrefix}/api/delete",
+					type: "post",
+					data:{id:id},
+					success: function (data) {
+						//alert(data);
+						if(data == "true") {
+							alert("删除成功！");
+							location.reload();
+						} else {
+							alert("删除失败！");
+						}
+					}
+
+				})
+			} else {
+				return false;
+			}
+		}*/
+		$('#serach-btn').on('click',function(){
+			var devNo = $('#devNo').val().trim();
+			location.href = '${appPrefix}/intellDev/index/1.html?devNo='+devNo;
+			/*var name = $('#name').val().trim();
+			 var address = $('#address').val().trim();
+			 var creator = $('#creator').val().trim();
+			 var belong = $('#belong').val().trim();*/
+			//location.href = '${appPrefix}/coffee/index/1.html?devNo='+devNo+'&name='+name+'&address='+address+'&creator='+creator+'&belong='+belong;
+		})
+
+
+
+
+	})
+
+
+</script>
+</html>

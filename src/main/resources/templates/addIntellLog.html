@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>营销平台</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="${appPrefix}/css/css.css" />
+	<!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<!--<div class="wraper">-->
+		<!-- 侧边栏 -->
+		<!--<div class="sidebar">
+			<nav class="navbar navbar-default navbar-color" role="navigation">
+			    <div class="container-fluid padding0">
+			    <div class="navbar-header">
+			        <button type="button" class="navbar-toggle" data-toggle="collapse"
+			                data-target="#example-navbar-collapse">
+			            <span class="sr-only">切换导航</span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			        </button>
+			        <a class="navbar-brand logo" href="#"><img src="${appPrefix}/images/u629.png" alt=""></a>
+			    </div>
+			    <div class="collapse navbar-collapse padding0" id="example-navbar-collapse">
+			        <ul class="nav navbar-nav navbar-item">
+			            <li class="active">
+			            	<a href="#"><img src="${appPrefix}/images/u400.png" alt="">iOS</a>
+			            </li>
+			            <li><a href="#"><img src="${appPrefix}/images/u400.png" alt="">SVN</a></li>
+			            <li class="dropdown">
+			                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+			                    <img src="${appPrefix}/images/u400.png" alt="">Java <b class="caret"></b>
+			                </a>
+			                <ul class="dropdown-menu second-menu">
+			                    <li><a href="#">jmeter</a></li>
+			                    <li><a href="#">EJB</a></li>
+			                    <li><a href="#">Jasper Report</a></li>
+			                    <li class="divider"></li>
+			                    <li><a href="#">分离的链接</a></li>
+			                    <li class="divider"></li>
+			                    <li><a href="#">另一个分离的链接</a></li>
+			                </ul>
+			            </li>
+			        </ul>
+			    </div>
+			    </div>
+			</nav>
+		</div>-->
+		<!-- 内容区 -->
+		<!--<div class="content">-->
+			<!--<div class="content-head">
+				<div class="row margin0">
+					<div class="col-sm-3 hidden-xs hidden-sm"><a href="#">优惠券管理/</a>优惠券编辑</div>
+					<div class="col-sm-8">
+						<div class="user">
+							<div class="head-img"></div>
+							<span>L.Lester</span>
+						</div>
+						<div class="help hidden-xs hidden-sm">
+							<img src="${appPrefix}/images/u451.png" alt="">
+							<span>帮助</span>
+						</div>
+					</div>	
+					<div class="col-sm-1"></div>
+				</div>
+			</div>-->
+			<div class="content-body">
+				<div class="content-details-wrap coupon-manage">
+					<!--<form action="${appPrefix}/api/add" method="post" id="form1" onsubmit="return ajaxSubmit(this)">-->
+					<form id="form1" name="form1" >
+						<div class="edit-content">
+							<!--<div class="row margin0">
+								<span>*创建时间：</span>
+								<input type="text" value="2017-02-23 11:11:11" name="gmtCreate">
+							</div>
+							<div class="row margin0">
+								<span>*更新时间：</span>
+								<input type="text" value="2017-02-23 11:11:11" name="gmtModified">
+							</div>-->
+							<div class="row margin0">
+								<span>*设备编号：</span>
+								<input type="text" placeholder="输入设备编号" name="devNo">
+							</div>
+
+							<div class="row margin0 create-way">
+								<span>*设备状态：</span>
+								<input type="radio" name="status" checked value="1"> 在线
+								<input type="radio" name="status" value="0"> 离线
+							</div>
+
+							<div class="row margin0">
+								<span>*设备所属客户：</span>
+								<input type="text" placeholder="输入设备所属客户"name="belongNo">
+							</div>
+
+
+						</div>
+						<div class="upload-operate">
+							<a class="btn btn-primary"onclick="submit()">提交</a>
+							<a class="btn btn-default" href="javascript:void(0);" onclick="jump()">返回</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		<!--</div>-->
+	<!--</div>-->
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="${appPrefix}/js/js.js"></script>
+<script>
+
+	function myCheck()
+		{
+		   for(var i=0;i<document.form1.elements.length-1;i++)
+		   {
+			  if(document.form1.elements[i].value=="" || $.trim(document.form1.elements[i].value) == "")
+			  {
+				 alert("当前表单不能有空项");
+				 document.form1.elements[i].focus();
+				 return false;
+			  }
+		   }
+		   return true;
+
+		}
+	function submit() {
+		if(!myCheck()) {
+			return false;
+		}
+		$.ajax({
+			url: "${appPrefix}/logApi/add",
+			type: "post",
+			data:$('#form1').serialize(),// 你的formid
+			success: function (data) {
+			    //alert(data);
+			    if(data == "true") {
+			   		alert("添加成功！");
+			    } else {
+			    	alert("添加失败！");
+			    }
+			}
+
+		})
+	}
+	function jump() {
+		location.href = document.referrer;
+	}
+    </script>
+</html>
